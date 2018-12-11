@@ -16,13 +16,13 @@ class PhotosUploader extends Component {
 
     render() {
         return (
-            <div>
+            <div className="button-container">
                 <Dropzone
                     id="direct-upload-dropzone"
                     disableClick={true}
                     multiple={false}
                     accept="image/*"
-                    style={{ position: 'relative' }}
+                    style={{ position: 'relative'}}
                     onDrop={this.onPhotoSelected.bind(this)}
                 >
                     <div id="direct_upload">
@@ -109,7 +109,7 @@ class PhotosUploader extends Component {
                 .field('upload_preset', this.context.uploadPreset)
                 .field('file', file)
                 .field('multiple', true)
-                .field('tags', title ? `myphotoalbum,${title}` : 'myphotoalbum')
+                .field('tags', title ? `myphotoalbum,bestpics,${title}` : 'myphotoalbum,bestpics')
                 .field('context', title ? `photo=${title}` : '')
                 .on('progress', (progress) => this.onPhotoUploadProgress(photoId, file.name, progress))
                 .end((error, response) => {
@@ -146,6 +146,7 @@ PhotosUploader.propTypes = {
 PhotosUploader.contextTypes = {
     cloudName: PropTypes.string,
     uploadPreset: PropTypes.string,
+
 };
 
 const PhotosUploaderContainer = connect(

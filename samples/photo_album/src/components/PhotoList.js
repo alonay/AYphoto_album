@@ -12,25 +12,35 @@ class PhotoList extends Component {
     render() {
         return (
             <div className="photoList">
-                <FacebookImage
-                    publicId1="billclinton"
-                    publicId2="officialchucknorrispage"
-                />
                 <Introduction />
-                <h1>Your Photos</h1>
-                <div className="actions">
-                    <a
-                        className="upload_link"
-                        onClick={this.uploadImageWithCloudinary.bind(this)}
-                    >
-                        Add photos with Cloudinary File upload
-                    </a>
+                <div className="magician">
+                    <img
+                        className="magic-pic"
+                        src="https://res.cloudinary.com/ayimages/image/upload/v1544407405/Screen_Shot_2018-12-09_at_9.02.48_PM.png"
+                        height="600"
+                        width="600"
+                    />
+                    <div className="buttons">
+                        <div className= "cloudinary-upload">
+                            <div className="actions">
+                                <a
+                                    className="upload_link"
+                                    onClick={this.uploadImageWithCloudinary.bind(this)}
+                                >
+                                    Add Photos with Cloudinary File Upload
+                                </a>
+                            </div>
+                        </div>
+                        <div className="react-upload">
+                            <div className="actions">
+                                <NavLink className="upload_link" exact to="/photos/new">
+                                    Add Photo with React File Upload
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="actions">
-                    <NavLink className="upload_link" exact to="/photos/new">
-                        Add photo with React File upload
-                    </NavLink>
-                </div>
+                <h1 font-family="Apple Chancery">Your Magically Transformed Photos</h1>
                 <div className="photos">
                     {this.props.photos.length === 0 && (
                         <p>No photos were added yet.</p>
@@ -60,7 +70,10 @@ class PhotoList extends Component {
     }
 
     uploadImageWithCloudinary() {
-        const uploadOptions = { tags: 'myphotoalbum', ...this.context };
+        const uploadOptions = {
+          tags: ['myphotoalbum'],
+          ...this.context
+        };
         openUploadWidget(uploadOptions, (error, photos) => {
             if (!error) {
                 this.props.onPhotosUploaded(photos);

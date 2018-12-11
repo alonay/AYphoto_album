@@ -24,7 +24,7 @@ Run `npm install` to install the required dependencies for this module.
 
 Run `npm start` to start the server and automatically open a browser and navigate to the application's url.
 
-The application is deplyoed at http://localhost:3000/
+The application is deployed at http://localhost:3000/
 
 ## Internals ##
 This sample is using [Webpack](https://webpack.github.io) for bundling and serving the application.
@@ -36,7 +36,7 @@ This sample is using [Webpack](https://webpack.github.io) for bundling and servi
 The application has 2 routes:
 
 * **/photos** - Presents a list of images tagged by `myphotoalbum`
-* **/photos/new** - Presents an upload control that allows uploading multiple files by a file input or drag-and-grop.
+* **/photos/new** - Presents an upload control that allows uploading multiple files by a file input or drag-and-drop.
 Uploads have a dynamic progress bar. In addition it displays the details of successful uploads.  
 
 The default route is set to `/photos`.
@@ -63,8 +63,8 @@ While this tag can be set in the upload preset and remain hidden from the client
 
 ### List Resource ###
 
-Cloudinary supports a JSON list resource. 
+Cloudinary supports a JSON list resource.
 This list represents all resources marked with a specific tag during upload (or later through other APIs).
-Whenever a new resource is uploaded with a tag, or an existing resource already tagged is deleted then the list is recalculated. 
+Whenever a new resource is uploaded with a tag, or an existing resource already tagged is deleted then the list is recalculated.
 This enables you to group a list of resources which can be retrieved by a single query. The size of the list is currently limited to 100 entires.
 [Learn more](http://cloudinary.com/documentation/image_transformations#client_side_resource_lists)

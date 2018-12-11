@@ -10,6 +10,7 @@ class UploadedPhotoStatus extends Component {
         const response = uploadedPhoto.response;
         const data = response && response.body;
         const percent = Math.floor(uploadedPhoto.progress.percent);
+
         return (
             <div>
                 <h3>{uploadedPhoto.fileName}</h3>

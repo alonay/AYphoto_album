@@ -48,12 +48,22 @@ a {
     color: #0b63b6
 }
 
+.introduction {
+    background-color: yellow;
+}
+
 .manipulation-video {
     margin: 10px 0;
 }
 
-.actions {
-    margin: 20px 0;
+.react-upload{
+    margin-top: 40px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .upload_link {
@@ -104,6 +114,10 @@ img.static-photo {
     height: 182px;
     margin-bottom: 5px;
     margin-right: 10px;
+}
+
+.magician {
+    display: flex;
 }
 
 .note {

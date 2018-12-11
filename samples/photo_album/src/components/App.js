@@ -21,12 +21,7 @@ class App extends Component {
                 uploadPreset={this.props.uploadPreset}
             >
                 {/*This will render the image fetched from a remote HTTP URL using Cloudinary*/}
-                <Image
-                    type="fetch"
-                    publicId="https://cloudinary.com/images/logo.png"
-                    fetch-format="auto"
-                    quality="auto"
-                />
+            
                 <BrowserRouter>
                     <Switch className="router">
                         <Route
@@ -49,8 +44,8 @@ class App extends Component {
 
 App.propTypes = {
     cloudName: PropTypes.string,
-    uploadPreset: PropTypes.string,
     onPhotosFetched: PropTypes.func,
+    uploadPreset: PropTypes.string,
 };
 
 App.contextTypes = {

@@ -16,8 +16,10 @@ const store = createStore(rootReducer);
 
 render(
     <Provider store={store}>
-        <App cloudName={Config.cloud_name}
-                      uploadPreset={Config.upload_preset} />
+        <App
+            cloudName={Config.cloud_name}
+            uploadPreset={Config.upload_preset}
+        />
     </Provider>,
     document.getElementById('root')
 );

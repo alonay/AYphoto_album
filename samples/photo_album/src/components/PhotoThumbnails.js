@@ -1,25 +1,35 @@
 import React from 'react';
-import { Image, Transformation } from 'cloudinary-react';
+import { Image, Transformation, } from 'cloudinary-react';
 
 const transformations = [
-    [{ crop: 'fill', width: '150', height: '150', radius: '10' }],
-    [{ crop: 'scale', width: '150', height: '150' }],
-    [{ crop: 'fit', width: '150', height: '150' }],
-    [{ crop: 'thumb', gravity: 'face', width: '150', height: '150' }],
-    [
-        {
-            crop: 'fill',
-            effect: 'sepia',
-            gravity: 'north',
-            width: '150',
-            height: '150',
-            radius: '20',
-        },
+    [{ crop: 'limit', width: '500', height: '500', radius: '10' }],
+    [{ crop: 'limit', width: '500', height: '500', effect: 'tint:50:red' }],
+    [{ crop: 'limit', width: '500', height: '500', effect: 'gradient_fade' }],
+    [{ crop: 'limit', width: '500', height: '500', border: '2px_solid_black' }],
+    [{
+        crop: 'limit',
+        effect: 'sepia',
+        gravity: 'north',
+        width: '500',
+        height: '500',
+        radius: '20',
+    },
         { angle: '20' },
     ],
-];
+    [{ crop: 'limit', width: '500', height: '500', effect: 'saturation:50' }],
+    [{
+      crop: 'limit',
+      width: '500',
+      height: '400',
+      opacity: '60',
+      overlay: 'cloudinary-icon',
+      effect: 'colorize',
+      color: 'white'
+    }],
+  ];
 
 const PhotoThumbnails = ({ publicId }) => (
+  <div className="thethumbnailholder">
     <table className="thumbnails">
         <tr>
             {transformations.map(transformation => {
@@ -31,6 +41,7 @@ const PhotoThumbnails = ({ publicId }) => (
                                 className="thumbnail inline"
                                 format="jpg"
                             >
+
                                 {transformation.map(
                                     (subTransformation, index) => {
                                         return (
@@ -65,6 +76,7 @@ const PhotoThumbnails = ({ publicId }) => (
             })}
         </tr>
     </table>
+  </div>
 );
 
 export default PhotoThumbnails;
