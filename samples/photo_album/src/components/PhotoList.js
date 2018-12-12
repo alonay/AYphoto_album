@@ -16,7 +16,7 @@ class PhotoList extends Component {
                 <div className="magician">
                     <img
                         className="magic-pic"
-                        src="https://res.cloudinary.com/ayimages/image/upload/v1544407405/Screen_Shot_2018-12-09_at_9.02.48_PM.png"
+                        src="https://res.cloudinary.com/ayimages/image/upload/v1544637997/Screen_Shot_2018-12-12_at_1.05.53_PM.png"
                         height="600"
                         width="600"
                     />
